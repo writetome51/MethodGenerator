@@ -1,0 +1,29 @@
+{
+  "name": "method-generator",
+  "version": "1.0.0",
+  "description": "a very specialized tool",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/MethodGenerator.git"
+  },
+  "keywords": [
+    "basic",
+    "data-handling",
+    "functions",
+    "classes"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/MethodGenerator/issues"
+  },
+  "homepage": "https://github.com/writetome51/MethodGenerator#readme",
+  "dependencies": {
+    "self-identifiable": "latest",
+    "intuitive-object-handlers": "latest"
+  }
+}
