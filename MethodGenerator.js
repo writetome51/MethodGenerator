@@ -13,8 +13,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var SelfIdentifiable_1 = require("./SelfIdentifiable");
-var object_manipulation_1 = require("../functions/datatype-handlers/objects/object_manipulation");
+var SelfIdentifiable_1 = require("self-identifiable/SelfIdentifiable");
+var getUninheritedPublicMethods_1 = require("intuitive-object-handlers/get/getUninheritedPublicMethods");
 /**********************
  I don't know how reusable this class is.  It was originally written to
  automatically generate methods for the ArrayEditor class.  ArrayEditor has properties
@@ -57,7 +57,7 @@ var MethodGenerator = /** @class */ (function (_super) {
         var _this = this;
         if (prependPropertyName === void 0) { prependPropertyName = true; }
         properties.forEach(function (property) {
-            var methodNames = (object_manipulation_1.getUninheritedPublicMethods(_this.targetInstance[property]));
+            var methodNames = getUninheritedPublicMethods_1.getUninheritedPublicMethods(_this.targetInstance[property]);
             methodNames.forEach(function (methodName) {
                 _this._createNewMethodFor(methodName, property, prependPropertyName);
             });
@@ -80,7 +80,9 @@ var MethodGenerator = /** @class */ (function (_super) {
             for (var _i = 0; _i < arguments.length; _i++) {
                 parameters[_i] = arguments[_i];
             }
-            return this[nameOfFunctionToCall](this[objName], this[objName][objectsMethodName], Object.values(arguments) // shouldn't this be parameters?
+            return this[nameOfFunctionToCall](this[objName], this[objName][objectsMethodName], 
+            // @ts-ignore
+            Object.values(arguments) // shouldn't this be parameters?
             );
         };
     };
